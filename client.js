@@ -10,16 +10,13 @@ const connect = function () {
   //sends name to server to display
   conn.on("connect", (connect) => {
     console.log("Successfully connected to the game server")
-    conn.write("Name: MAX")
-    setInterval(() => {
-      conn.write("Move: up")
-    }, 5);
+    conn.write("Name: MAV")
   })
   conn.on("data", (data) => {console.log(data)})
   return conn;
 };
 
-console.log("Connecting ...");
-connect();
-
 module.exports = connect;
+//setInterval(() => {
+//  conn.write("Move: up")
+//}, );
